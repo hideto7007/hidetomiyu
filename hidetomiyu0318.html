@@ -34,6 +34,7 @@
 
 
 <button type="button" onclick="start()">ここをクリックしてね♬</button>
+
 <br>
 <p>スライドショーが終わったら下の方までスクロールしてね</p>
 <br><br>
@@ -68,9 +69,10 @@
 	<br>
 	秀人より
 
-
 	</p>
+	<button type="button" onclick="reset()">終わったらここをクリックして更新してね</button>
 </div>
+
 
 
 </center>
@@ -123,11 +125,16 @@
 			if (num >= pics_src.length) {
 				clearInterval(intervalId)
 				console.log("終了")
-				message = document.getElementById("message");
-				message.style.display = "block";
+				setInterval(() => {
+					message = document.getElementById("message");
+					message.style.display = "block";
+				},1000);
 			}
 		},2000);
+	}
 
+	function reset() {
+		document.location.reload()
 	}
 	 
 	function slideshow_timer(){
@@ -135,17 +142,6 @@
 		
 		document.getElementById("mypic").src = pics_src[num];
 		num++
-	}
-
-	function btnClick(){
-		test = document.getElementById("test");
-		  if(test.style.display == "block"){
-			// noneで非表示
-			test.style.display = "none";
-		  }else{
-			// blockで表示
-			test.style.display = "block";
-		}
 	}
 
 
