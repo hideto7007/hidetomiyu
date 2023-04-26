@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>実行結果</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<header>
+    <center>
+        <h1>二人の思い出</h1>
+    </center>
+</header>
+<style>
+	header {
+		position: fixed;
+		color: white;
+		width: 100%;
+		height: 70px;
+		background-color: #8dc21f;
+	}
+</style>
+
+<br>
+<br>
+<br>
+
+<center>
+	<h2>思い出のスライドショー</h2>
+</center>
+
+<center>
+
+
+<button type="button" onclick="start()">ここをクリックしてね♬</button>
+<br>
+<p>スライドショーが終わったら下の方までスクロールしてね</p>
+<br><br>
+<img id="mypic" src="" />
+
+<!-- style="display: none;" -->
+<div id="message" >
+	<br>
+	<h2>みゆへ</h2>
+	<br>
+	<p class="justify">付き合って1ヶ月が過ぎたね!<br>
+	１ヶ月間あっという間だったのと、いろいろ楽しいことやバカ騒ぎ、話し合いが出来て良かったよ<br>
+	これからもたくさんバカ楽しいことをしようね(のど飴は必須で(笑))<br>
+	俺は美有に出会えて本当に良かったし、こんな可愛い子が俺の彼女でほんと幸せ者だーー－－!!!<br>
+	後、ここまでぞっこんになったのも美有が初めてなんだよな。。。(他の人には言わないでね)<br>
+	くどいようだけど、美有のことが一番(可愛くて、大好きで、愛してる、大事)だよ!<br>
+	これからもこの気持ちは増して、減ったりしないから安心してね!!<br>
+	<br>
+	最近、仕事環境やプライベートでいろいろあってすごく大変だと思うけど、一人で抱え込まずに少しは頼ってね<br>
+	今まで美有は一人でどうにかしてきたと思うけど、その分メンタルもすごく疲弊して自身を追い込んで<br>
+	来てつらい思いをしたと思うからさ。<br>
+	俺もそんなつらい美有を見てると、辛くなっちゃうんだ。。本当に大好きで大切な存在だから<br>
+	ただ、それは悪いことだけではなく、むしろ誇るべきところでもあるからその考え方は尊重してるよ!<br>
+	後、すぐに変えるってことは出来ないから少しずつ変えて来てくれたら嬉しいかな♪<br>
+	そこは美有のペースに任せるね!!<br>
+	今、俺自身が思ってる心境を伝えた次第です。<br>
+	<br>
+	最後に、僕と出会ってくれて、お付き合いしてくれて本当にありがとう<br>
+	ここまで、人として尊敬出来たり、僕の事を大好きで愛してくれた人は美有が初めてだよ<br>
+	この先も僕と一緒に居てね💛
+	<br>
+	<br>
+	<br>
+	秀人より
+
+
+	</p>
+</div>
+
+
+</center>
+
+</body>
+
+</html>
+
+<script>
+
+	const pics_src = [
+		"images_resize/beauty_1679795136333.jpg",
+		"images_resize/beauty_1680344134201.jpg",
+		"images_resize/beauty_1680879478273.jpg",
+		"images_resize/beauty_1680879485311.jpg",
+		"images_resize/IMG_2198.JPG",
+		"images_resize/IMG_2201.JPG",
+		"images_resize/IMG_2203.JPG",
+		"images_resize/IMG_2212.JPG",
+		"images_resize/IMG_2227.JPG",
+		"images_resize/IMG_2229.JPG",
+		"images_resize/IMG_2254.JPG",
+		"images_resize/IMG_2328.JPG",
+		"images_resize/IMG_2338.JPG",
+		"images_resize/IMG_2340.JPG",
+		"images_resize/IMG_2354.JPG",
+		"images_resize/IMG_2358.JPG",
+		"images_resize/IMG_2406.JPG",
+		"images_resize/IMG_2408.JPG",
+		"images_resize/IMG_2423.JPG",
+		"images_resize/IMG_2431.JPG",
+		"images_resize/IMG_2460.JPG",
+		"images_resize/IMG_2474.JPG",
+		"images_resize/IMG_2515.JPG",
+		"images_resize/IMG_2537.JPG",
+		"images_resize/IMG_2554.JPG",
+		"images_resize/IMG_2570.JPG",
+		"images_resize/IMG_2571.JPG",
+		"images_resize/IMG_2578.JPG",
+		"images_resize/IMG_2581.JPG",
+		"images_resize/IMG_2589.JPG"
+		];
+	let num = 0;
+	 
+	 
+	function start() {
+		console.log("開始")
+		const intervalId = setInterval(() => {
+			slideshow_timer()
+			if (num >= pics_src.length) {
+				clearInterval(intervalId)
+				console.log("終了")
+				message = document.getElementById("message");
+				message.style.display = "block";
+			}
+		},1000);
+
+	}
+	 
+	function slideshow_timer(){
+		console.log(num, pics_src.length)
+		
+		document.getElementById("mypic").src = pics_src[num];
+		num++
+	}
+
+	function btnClick(){
+		test = document.getElementById("test");
+		  if(test.style.display == "block"){
+			// noneで非表示
+			test.style.display = "none";
+		  }else{
+			// blockで表示
+			test.style.display = "block";
+		}
+	}
+
+
+</script>
